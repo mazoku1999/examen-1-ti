@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mueblería El Confort</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body>
+    <div class="contenedor">
+        <header class="encabezado-nav">
+            <div class="logo"><i class="fas fa-couch"></i></div>
+            <nav class="navegacion-principal">
+                <ul>
+                    <li><a href="#">Productos</a></li>
+                    <li><a href="#">Soluciones</a></li>
+                    <li><a href="#">Comunidad</a></li>
+                    <li><a href="#">Recursos</a></li>
+                    <li><a href="#">Precios</a></li>
+                    <li><a href="#">Contacto</a></li>
+                    <li><a href="#">Link</a></li>
+                </ul>
+            </nav>
+            <div class="botones-auth">
+                <button class="btn-signin">Iniciar sesión</button>
+                <button class="btn-register">Registrarse</button>
+            </div>
+        </header>
+
+
+        <section class="hero">
+            <h1>Mueblería El Confort</h1>
+            <p class="subtitulo">Calidad y estilo para tu hogar</p>
+        </section>
+
+
+        <main class="seccion-crud">
+            <section class="tarjeta-formulario">
+                <h2>Categorías</h2>
+                <form id="formularioCategoria" class="formulario">
+                    <label for="nombreCategoria">Nombre</label>
+                    <input type="text" id="nombreCategoria" required>
+
+                    <label for="descripcionCategoria">Descripción</label>
+                    <input type="text" id="descripcionCategoria" required>
+
+                    <div class="botones-form">
+                        <button type="submit" class="btn-agregar">Agregar</button>
+                    </div>
+                </form>
+
+                <div class="tabla-categorias">
+                    <table id="tablaCategorias">
+                        <thead>
+                            <tr>
+                                <th>Nombre</th>
+                                <th>Descripción</th>
+                                <th>Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tablaCategoriasBody">
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <section class="tarjeta-formulario">
+                <h2>Productos</h2>
+                <form id="formularioProducto" class="formulario">
+                    <label for="nombreProducto">Nombre</label>
+                    <input type="text" id="nombreProducto" required>
+
+                    <div class="fila-inputs">
+                        <div class="input-grupo">
+                            <label for="precioProducto">Precio</label>
+                            <input type="number" id="precioProducto" required>
+                        </div>
+                        <div class="input-grupo">
+                            <label for="categoriaProducto">Categoría</label>
+                            <select id="categoriaProducto" required>
+                                <option value="">--Seleccionar--</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="botones-form">
+                        <button type="submit" class="btn-agregar">Agregar</button>
+                    </div>
+                </form>
+
+                <div id="categoriaActualizar" class="seccion-actualizar" style="display: none;">
+                    <label for="nombreCategoriaEdit">Nombre</label>
+                    <input type="text" id="nombreCategoriaEdit">
+                    <div class="botones-form">
+                        <button type="button" id="btnActualizarCategoria" class="btn-actualizar">Actualizar</button>
+                        <button type="button" id="btnBorrarCategoria" class="btn-borrar">Borrar</button>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+
+        <section class="seccion-tabla">
+            <table id="tablaProductos">
+                <thead>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Precio</th>
+                        <th>Categoría</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody id="tablaProductosBody">
+                </tbody>
+            </table>
+        </section>
+
+        <section class="seccion-horizontal">
+            <div class="horizontal-header">
+                <h2>Ofertas Especiales</h2>
+                <p class="subtitulo-horizontal">Descuentos exclusivos en muebles seleccionados</p>
+            </div>
+
+            <div class="card-horizontal">
+                <img src="assets/sofa.jpg" alt="Sofá de lujo" class="imagen-horizontal">
+                <div class="contenido-horizontal">
+                    <h3>Sofá de Lujo Premium</h3>
+                    <p>Experimenta el máximo confort con nuestro sofá de lujo. Tapizado en cuero genuino, estructura de
+                        madera maciza y diseño ergonómico que se adapta perfectamente a tu sala de estar.</p>
+                    <button class="btn-horizontal">Ver Detalles</button>
+                </div>
+            </div>
+
+            <div class="card-horizontal">
+                <img src="assets/mesa-comedor.jpg" alt="Mesa extensible" class="imagen-horizontal">
+                <div class="contenido-horizontal">
+                    <h3>Mesa de Comedor Extensible</h3>
+                    <p>Perfecta para reuniones familiares. Mesa extensible de madera de roble con capacidad para 8
+                        personas. Incluye sistema de extensión fácil y acabado resistente a manchas.</p>
+                    <button class="btn-horizontal">Ver Detalles</button>
+                </div>
+            </div>
+
+            <div class="card-horizontal">
+                <img src="assets/cama.jpg" alt="Cama king size" class="imagen-horizontal">
+                <div class="contenido-horizontal">
+                    <h3>Cama King Size Deluxe</h3>
+                    <p>Descansa como nunca antes. Cama king size con cabecero acolchado, base reforzada y diseño
+                        moderno. Incluye cajones de almacenamiento integrados para maximizar el espacio.</p>
+                    <button class="btn-horizontal">Ver Detalles</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="seccion-cards">
+            <div class="cards-header">
+                <h2>Nuestros Muebles</h2>
+                <p class="subtitulo-cards">Descubre nuestra colección</p>
+            </div>
+            <div class="grid-cards">
+                <div class="card">
+                    <img src="assets/sofa.jpg" alt="Sofá moderno" class="card-imagen">
+                    <h3>Sofás Modernos</h3>
+                    <p>Diseños contemporáneos con la máxima comodidad para tu hogar. Perfectos para tu sala de estar con
+                        materiales de primera calidad, tapizados resistentes y estructuras duraderas. Cada sofá está
+                        diseñado pensando en tu bienestar y el estilo de tu espacio.</p>
+                </div>
+                <div class="card">
+                    <img src="assets/mesa-comedor.jpg" alt="Mesa de comedor" class="card-imagen">
+                    <h3>Mesas de Comedor</h3>
+                    <p>Espacios para compartir momentos especiales con tu familia y amigos. Variedad de tamaños y
+                        estilos para cada hogar, desde diseños clásicos hasta modernos. Fabricadas con maderas nobles y
+                        acabados de alta calidad que perduran en el tiempo.</p>
+                </div>
+                <div class="card">
+                    <img src="assets/cama.jpg" alt="Cama confortable" class="card-imagen">
+                    <h3>Camas Confortables</h3>
+                    <p>Descanso garantizado con nuestras camas de diseño ergonómico y materiales premium. Calidad que se
+                        siente cada noche con estructuras robustas y acabados elegantes. Transforma tu dormitorio en un
+                        oasis de tranquilidad y confort absoluto.</p>
+                </div>
+                <div class="card">
+                    <img src="assets/silla.jpg" alt="Silla elegante" class="card-imagen">
+                    <h3>Sillas Elegantes</h3>
+                    <p>Estilo y funcionalidad en cada pieza para complementar cualquier ambiente. Desde sillas de
+                        oficina ergonómicas hasta comedores completos con diseños únicos. Comodidad y durabilidad en
+                        cada asiento para tu hogar u oficina.</p>
+                </div>
+                <div class="card">
+                    <img src="assets/estanteria.jpg" alt="Estantería moderna" class="card-imagen">
+                    <h3>Estanterías Modernas</h3>
+                    <p>Organiza tu espacio con estilo y funcionalidad excepcional. Soluciones de almacenamiento que
+                        complementan tu decoración mientras mantienen todo en orden. Diseños versátiles que se adaptan a
+                        cualquier habitación de tu hogar.</p>
+                </div>
+                <div class="card">
+                    <img src="assets/escritorio.jpg" alt="Escritorio funcional" class="card-imagen">
+                    <h3>Escritorios Funcionales</h3>
+                    <p>Espacios de trabajo funcionales y modernos para aumentar tu productividad. Ideales para home
+                        office o estudio con amplios espacios de almacenamiento. Diseños que combinan ergonomía,
+                        estética y practicidad en un solo mueble.</p>
+                </div>
+            </div>
+        </section>
+
+        <footer class="pie-pagina">
+            <div class="footer-contenido">
+                <div class="footer-logo">
+                    <div class="logo-footer"><i class="fas fa-couch"></i></div>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-x-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+                <div class="footer-columnas">
+                    <div class="footer-columna">
+                        <h4>Productos</h4>
+                        <ul>
+                            <li><a href="#">Sofás y Sillones</a></li>
+                            <li><a href="#">Mesas y Sillas</a></li>
+                            <li><a href="#">Camas y Colchones</a></li>
+                            <li><a href="#">Escritorios</a></li>
+                            <li><a href="#">Estanterías</a></li>
+                            <li><a href="#">Muebles de Exterior</a></li>
+                            <li><a href="#">Decoración</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-columna">
+                        <h4>Servicios</h4>
+                        <ul>
+                            <li><a href="#">Entrega a Domicilio</a></li>
+                            <li><a href="#">Armado e Instalación</a></li>
+                            <li><a href="#">Financiamiento</a></li>
+                            <li><a href="#">Garantía Extendida</a></li>
+                            <li><a href="#">Diseño de Interiores</a></li>
+                            <li><a href="#">Asesoría Personalizada</a></li>
+                            <li><a href="#">Mantenimiento</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-columna">
+                        <h4>Información</h4>
+                        <ul>
+                            <li><a href="#">Sobre Nosotros</a></li>
+                            <li><a href="#">Contacto</a></li>
+                            <li><a href="#">Preguntas Frecuentes</a></li>
+                            <li><a href="#">Políticas de Devolución</a></li>
+                            <li><a href="#">Términos y Condiciones</a></li>
+                            <li><a href="#">Ubicaciones</a></li>
+                            <li><a href="#">Trabaja con Nosotros</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <div id="modalEditar" class="modal">
+        <div class="modal-contenido">
+            <span class="cerrar-modal">&times;</span>
+            <h2>Editar Producto</h2>
+            <form id="formularioEditar" class="formulario">
+                <label for="nombreProductoEdit">Nombre</label>
+                <input type="text" id="nombreProductoEdit" required>
+
+                <div class="fila-inputs">
+                    <div class="input-grupo">
+                        <label for="precioProductoEdit">Precio (Bs)</label>
+                        <input type="number" id="precioProductoEdit" required>
+                    </div>
+                    <div class="input-grupo">
+                        <label for="categoriaProductoEdit">Categoría</label>
+                        <select id="categoriaProductoEdit" required>
+                            <option value="">--Seleccionar--</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="botones-form">
+                    <button type="submit" class="btn-actualizar">Actualizar</button>
+                    <button type="button" class="btn-cancelar" onclick="cerrarModalEditar()">Cancelar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div id="modalEliminar" class="modal">
+        <div class="modal-contenido modal-pequeno">
+            <h2>Confirmar Eliminación</h2>
+            <p>¿Está seguro de que desea eliminar este producto?</p>
+            <div class="botones-form">
+                <button type="button" class="btn-borrar" onclick="confirmarEliminar()">Eliminar</button>
+                <button type="button" class="btn-cancelar" onclick="cerrarModalEliminar()">Cancelar</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="modalEditarCategoria" class="modal">
+        <div class="modal-contenido">
+            <span class="cerrar-modal" onclick="cerrarModalEditarCategoria()">&times;</span>
+            <h2>Editar Categoría</h2>
+            <form id="formularioEditarCategoria" class="formulario">
+                <label for="nombreCategoriaEditModal">Nombre</label>
+                <input type="text" id="nombreCategoriaEditModal" required>
+
+                <label for="descripcionCategoriaEditModal">Descripción</label>
+                <input type="text" id="descripcionCategoriaEditModal" required>
+
+                <div class="botones-form">
+                    <button type="submit" class="btn-actualizar">Actualizar</button>
+                    <button type="button" class="btn-cancelar" onclick="cerrarModalEditarCategoria()">Cancelar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div id="modalEliminarCategoria" class="modal">
+        <div class="modal-contenido modal-pequeno">
+            <h2>Confirmar Eliminación</h2>
+            <p>¿Está seguro de que desea eliminar esta categoría?</p>
+            <div class="botones-form">
+                <button type="button" class="btn-borrar" onclick="confirmarEliminarCategoria()">Eliminar</button>
+                <button type="button" class="btn-cancelar" onclick="cerrarModalEliminarCategoria()">Cancelar</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
